@@ -18,6 +18,10 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp',(err,db)=>{
     console.log(JSON.stringify(result.ops[0]._id.getTimestamp(),undefined,2));
   });
 */
+db.collection('Users').findOneAndDelete({_id:new ObjectID('5bfe35e39483ae44d414ba13')}).then((result)=>{
+  console.log(result);
+})
+/*
 db.collection('Users1').find({
   name: 'Peerajak'
 }).count().then((numfound)=>{
@@ -25,5 +29,7 @@ db.collection('Users1').find({
 },(err)=>{
         return console.log('Cannot find',err);
 });
+
+*/
   db.close();
 });
